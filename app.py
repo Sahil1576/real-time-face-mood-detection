@@ -1,7 +1,7 @@
 import streamlit as st
 import numpy as np
 import cv2
-from keras.models import load_model
+from tensorflow.keras.models import load_model
 import gdown
 import os
 
