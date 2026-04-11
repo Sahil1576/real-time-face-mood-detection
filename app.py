@@ -56,8 +56,17 @@ def predict_image(img):
     processed = preprocess(face)
     preds = model.predict(processed)
     idx = np.argmax(preds)
+    emotion = emotion_labels[idx]
+    emoji_dict = {
+        'Angry': '😠',
+        'Fear': '😨',
+        'Happy': '😊',
+        'Sad': '😢',
+        'Surprise': '😲'
+    }
+    emoji = emoji_dict.get(emotion, '')
 
-    st.success(f"😊 Emotion: {emotion_labels[idx]}")
+    st.success(f" {emoji} Emotion: {emotion_labels[idx]}")
     st.write(f"Confidence: {float(preds[0][idx])*100:.2f}%")
 
 # ------------------- TAB 1 -------------------
