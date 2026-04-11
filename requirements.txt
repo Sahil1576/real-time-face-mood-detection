@@ -4,3 +4,4 @@ keras==2.13.1
 opencv-python-headless
 numpy 
 Pillow
+gdown
